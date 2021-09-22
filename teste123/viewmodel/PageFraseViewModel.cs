@@ -17,6 +17,8 @@ namespace teste123.viewmodel
             listString = new List<TextString>();
         }
 
+        #region Propriedades
+
         private string inputText = "Esta é uma frase exemplo exemplo";
         public string InputText
         {
@@ -27,6 +29,10 @@ namespace teste123.viewmodel
                 this.Notify(nameof(InputText));
             }
         }
+
+        #endregion
+
+        #region Command
 
         public ICommand SendCommand
         {
@@ -60,8 +66,9 @@ namespace teste123.viewmodel
                 });
             }
         }
+        #endregion
 
-
+        #region Private 
         private List<TextString> checkQtdStringEquals(String frase)
         {
             var vet = frase.Split(' ');
@@ -91,5 +98,6 @@ namespace teste123.viewmodel
 
             return listString;
         }
+        #endregion
     }
 }
