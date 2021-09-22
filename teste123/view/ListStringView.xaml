@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="teste123.view.ListStringView">
+    <ContentPage.Content>
+        <Grid>
+             <CollectionView
+                    Margin="10,10"
+                    ItemSizingStrategy="MeasureFirstItem"
+                    Background="#F6F6F6"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand"
+                    ItemsSource="{Binding ListString}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout
+                                HeightRequest="50"
+                                HorizontalOptions="FillAndExpand"
+                                Margin="0"
+                                Spacing="0">
+                                    <Label Text="{Binding textString, StringFormat='Palavra: {0}'}" />
+                                    <Label Text="{Binding qtd, StringFormat='Quantidade: {0}'}" TextColor="Blue" />
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Grid>
+    </ContentPage.Content>
+</ContentPage>
